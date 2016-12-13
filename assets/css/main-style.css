@@ -1,0 +1,121 @@
+﻿
+
+/* side-menu section */
+/*efeito hover navegação menu superior e lateral*/
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color:#e6f9ff;
+	
+}
+/*efeito hover menu superior*/
+.navbar-top-links  .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #268aa9;
+}
+/*cor/tamanho icones superior*/
+.navbar-top-links > li > a {
+color: #062f3c;
+
+}
+/*tamanho barra superior*/
+.nav > li > a {
+padding: 20px 15px;
+
+}
+/*tamanho e cor menu lateral*/
+#side-menu {
+    background-color:#ffff;
+	margin-top: 80px;
+	
+}
+
+ #side-menu a {
+		
+		color:#0a3e4f; /*cor das opções letras menu lateral*/
+		
+        border-bottom: 1px solid #ffff !important;
+		height: 60px;
+        }
+        .selected {
+			/*cor menu lateral quando selecionado*/
+            background-color:#ffff;
+			
+        }
+/* back colors */
+        .blue {
+            background-color:#ffff;
+        }
+         .green {
+            background-color:#ffff;
+        }
+          .red {
+            background-color:rgb(255, 102, 133);
+        }
+        .yellow {
+            background-color:rgb(237, 253, 46);
+        }
+
+  /* No border */
+.no-boder {
+    border:0px solid #5bc0de !important;
+}
+/* tap nvbar Section */
+
+#navbar {
+/*cor barra superior*/
+ color:#fff;
+box-shadow: inset 0 0 3px 0 rgba(255,255,255,.3), inset 0 2px 6px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.2);
+background-image: linear-gradient(to bottom, #1e6e87, #0092d7 130%);
+}
+/*alinhamento da logomarca*/
+.navbar-brand {
+    padding-left:30px;
+	
+}
+/*tamanho da logomarca*/
+.navbar-brand img {
+    height:75px;
+	margin-top: -10px;
+}
+.top-label {
+    position: absolute;
+top: 50%;
+right: 50%;
+margin-top: -24px;
+margin-right: -24px;
+}
+
+/*large font*/
+.large-font {
+    font-size:18px;
+}
+/*Alterar background login*/
+.body-Login-back {
+    background-color:#0092d7;
+}
+
+.margin-tips {
+    margin:5px;
+}
+.navbar-default {
+border-color: #0092d7;
+}
+/*media queries*/
+
+@media(min-width:768px) 
+{
+    #page-wrapper {
+        position: inherit;
+        margin: 0 0 0 250px;
+        padding: 0 30px;
+        min-height: 1000px;
+       
+       
+    }
+
+}
+
+@media(max-width:768px) {
+#wrapper {
+    margin-top:140px!important;
+    
+}
+}

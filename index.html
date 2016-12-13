@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    
+    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <!-- Page-Level CSS -->
+    <link href="assets/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+	<script>
+	var contador = 3;
+	var concluidas = 0;
+	function adciona(){
+		var data = document.getElementById("idData").value;
+		var nome = document.getElementById("idNome").value;
+		var termino = document.getElementById("idTermino").value;
+		var atividade = document.getElementById("idAtividade").value;
+		
+		$('#myTable').append('<tr><th>'+data+'</th><th>'+nome+'</th><th>'+termino+'</th><th>'+atividade+'</th><td><button type="button" id="concluir" onclick="deleteRow(this)">Concluir</button> </td></tr>');
+        contador = contador+1; 
+			
+        atualizaBarra();                                           
+                                                    
+													
+	}
+	function deleteRow(btn) {
+	  var row = btn.parentNode.parentNode;
+	  row.parentNode.removeChild(row);
+	  
+	  concluidas = concluidas+1;
+	  
+	  atualizaBarra();
+	}
+	
+	function atualizaBarra(){
+		var total = (concluidas/contador)*100;
+		document.getElementById("barraProgresso").value = total;
+	}
+	</script>
+   </head>
+<body>
+    <!--  wrapper -->
+    <div id="wrapper">
+        <!-- navbar top -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <!-- navbar-header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/logo.png" alt="" />
+                </a>
+            </div>
+            <!-- end navbar-header -->
+            <!-- navbar-top-links -->
+            
+        </nav>
+        <!-- end navbar top -->
+
+        <!-- navbar side -->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <!-- sidebar-collapse -->
+            <div class="sidebar-collapse">
+                <!-- side-menu -->
+                
+            <!-- end sidebar-collapse -->
+        </nav>
+        <!-- end navbar side -->
+        <!--  page-wrapper -->
+        <div id="page-wrapper">
+
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header"> To do List</h1>
+                </div>
+                <!--End Page Header -->
+            </div>
+
+            
+
+
+            <div class="row">
+               
+                <div class="col-lg-3">
+                   
+                </div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+
+
+					<div id="formulário">
+					 <form action="demo_form.asp">
+					  Data Do Agendamento: <input type="text" name="fname" id="idData"><br>
+					  Nome: <input type="text" name="lname" id="idNome"><br>
+					  DeadLine: <input type="text" name="lname" id="idTermino"><br>
+					  Tarefa: <input type="text" name="lname" id="idAtividade"><br>
+					   <button type="button" onclick="adciona()">Agendar</button> 
+					</form> 
+					</div>
+                    
+                    <!--Simple table example -->
+                    <div class="panel panel-primary">
+                        
+							
+                        <div class="panel-body">
+						 
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover table-striped" id="myTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Data Inicial</th>
+                                                    <th>Nome</th>
+                                                    <th>Previsão de término</th>
+                                                    <th>Atividade</th>
+													<th>Status</th>
+													<!--<th>Preferência</th>!-->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>10/10/2010</td>
+                                                    <td>Mariana</td>
+                                                    <td>11/10/2010</td>
+                                                    <td>Fazer site</td>
+													<td><button type="button" id="concluir" onclick="deleteRow(this)">Concluir</button> </td>
+													<!--<td>Maria</td>!-->
+                                                </tr>
+                                                <tr>
+                                                    <td>10/10/2010</td>
+                                                    <td>Joaquim</td>
+                                                    <td>11/10/2010</td>
+                                                    <td>Fazer arroz</td>
+													<td><button type="button" id="concluir" onclick="deleteRow(this)">Concluir</button> </td>
+													<!--<td>Joana</td>!-->
+                                                </tr>
+                                                <tr>
+                                                    <td>10/10/2010</td>
+                                                    <td>Joaquim</td>
+                                                    <td>11/10/2010</td>
+                                                    <td>Fritar Carne</td>
+													<td><button type="button" id="concluir" onclick="deleteRow(this)">Concluir</button> </td>
+													<!--<td>Cássia</td>!-->
+                                                </tr>
+                                               
+
+
+                                            </tbody>
+                                        </table>
+										<h1> TOTAL DE TAREFAS CONCLUIDAS</H1>
+						 <progress value="0" max="100" id="barraProgresso"></progress> 
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="panel panel-primary text-center no-boder">
+                      
+                </div>
+                <div class="col-lg-4">
+                   
+                </div>
+                
+            </div>
+
+        </div>
+       
+	
+    </div>
+   
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    
+
+</body>
+
+</html>
